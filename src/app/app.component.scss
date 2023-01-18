@@ -1,0 +1,28 @@
+p {
+    font-family: Lato;
+  }
+  .dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+.inactive{
+    background-color: red;  
+    }
+    
+.active{
+    background-color: green; 
+}
+.my-card {
+  background: lavender;
+  width: 100%;
+}
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

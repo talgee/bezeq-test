@@ -1,0 +1,24 @@
+<div class="container mt-5">
+    
+<div> התקנים רשומים {{all}} ({{countOk}} תקינים {{countNotOk}} בתקלה)</div>
+<br>
+
+<input type="button" value="הוסף התקן חדש" (click)="addNewDevice()" style="margin-right: 5ex;">
+<input type="button" value="מחק התקן אחרון" (click)="deleteLastDevice()">
+
+<mat-grid-list cols="5" rowHeight="200px" gutterSize="5px">
+  <mat-grid-tile *ngFor="let user of users, let i = index">
+    <mat-card class="my-card" style="align-items: center;">
+      <img src="/assets/sensors/{{user.Picture}}.png" width="50" height="50" >
+      <mat-card-title style="align-content: center;">{{user.WebSiteDeviceName}}</mat-card-title>
+      <mat-card-content style="text-align: center;">
+        {{user.DeviceTypeHebrew}}
+        <div><button class="vertical-center" (click)="updateStatus(i)" class="dot" [ngClass]="{
+          'active': user.ComponentOk == true, 
+          'inactive': user.ComponentOk == false}"></button></div>
+        <p style="align-content: center;">צימוד - {{ user.InstallDate | date: 'dd/MM/yyyy' }}</p>
+        <p style="align-content: center;">דיווח אחרון - {{ user.LastReportDate | date: 'dd/MM/yyyy' }}</p>
+      </mat-card-content>
+    </mat-card> 
+  </mat-grid-tile>
+</mat-grid-list> 
